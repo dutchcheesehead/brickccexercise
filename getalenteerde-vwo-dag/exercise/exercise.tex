@@ -55,73 +55,95 @@
 %%% The "real" document content comes below...
 
 \title{Introduction robotics}
-\author{Roland Meertens}
+\author{Roland Meertens, Stef Janssen, Franc Grootjen}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
 
 \begin{document}
 \maketitle
-\section{Introductie}
-Welkom bij dit praktisch college introductie robotica. 
+\section*{Introductie}
+Welkom bij dit praktisch introductie college robotica. 
 Tijdens de komende 2 uur ga je aan de slag om je eigen robot te bouwen en vervolgens in te programmeren. 
-Aan het eind van deze twee uur heb je als het goed is een robot ontworpen, gebouwd en zo geprogrammeert dat hij met jouw hulp uit een doolhof kan komen. 
+Om te beginnen mogen jullie je verdelen in drie groepjes. Lees vervolgens dit document volledig door. 
+Aan het eind van deze twee uur heb je als het goed is met je groepje een robot ontworpen, gebouwd en zo geprogrammeert dat hij met jouw hulp (door spraak) uit een doolhof kan komen. 
 Wanneer dit allemaal goed is gegaan dan kan je doorgaan naar de volgende opdracht: het volgen van een lijn. 
 
 Om te beginnen is het belangrijk om te weten dat je altijd aan de begeleiders van het practicum vragen kan stellen.
 Maak dan ook goed gebruik van deze mensen en vraag het vooral wanneer je niet snapt wat je moet doen, vragen hebt over hoe je iets op schrijft of wanneer je code niet werkt. 
 Rest mij jullie veel plezier te wensen op deze dag en met dit robotica practicum!
 
-\section{Runnen}
-1. start
-2. alle programma's
-3. diverse
-4. Bricx command center
-5. Bricx command center
-6. Port: usb
-7. Brick Type: NXT
-8. Firmware: Standard
-9. ok
-10. Edit je code
-11. Druk boven in de balk op compile -> compile
-12. Druk boven in de balk op Compile -> Download and run
+\section*{Opstarten: hardware}
+In deze ruimte staan drie gesorteerde dozen met lego, ieder team krijgt hiervan 1 doos.   
+Van deze dozen moet je je lego robot maken, hiervoor mag je uiteraard het voorbeeld volgen wat in het boekje staat. 
+Zorg ervoor dat bij het aansluiten van de motoren op de "brick" de motoren op A en C zitten. 
+Zorg er ook voor dat de lichtsensor op poort 1 zit en de geluidssensor op poort 3 zit. 
 
+\section*{Opstarten: software}
+Qua software moet je de volgende stappen volgen:
+\begin{enumerate}
+\item zet de brick aan door op de oranje knop te drukken
+\item sluit de brick aan met de USB kabel aan de computer
+\item log in op een willekeurige computer door als wachtwoord de naam van de computer te gebruiken (staat rechtsboven op het scherm) en het wachtwoord leeg te laten
+\item druk op start
+\item druk op alle programma's
+\item druk op diverse
+\item klik op Bricx command center
+\item klik op het icoontje van Bricx command center
+\item stel in bij Port: usb
+\item stel in bij Brick Type: NXT
+\item stel in bij Firmware: Standard
+\item druk op ok
+\item je krijgt al vooraf gemaakte code, open deze
+\item Edit je code
+\item Druk boven in de balk op compile -- compile
+\item Druk boven in de balk op Compile -- Download and run
+\end{enumerate}
+Op deze manier is het mogelijk om de code die je geschreven hebt op je brick te krijgen.  
 
-\section{Algemeen}
-Zorg ervoor dat de motoren op A en C zitten. 
-Zorg ervoor dat de lichtsensor op poort 1 zit en de geluidssensor op poort 3 zit. 
-\section{Opdracht 1: het ontwerpen en bouwen van je robot}
-Elk team ontvangt een doos met LEGO. 
+\section*{Opdracht 1: het ontwerpen en bouwen van je robot}
+Elk team heeft een doos met lego ontvangen. 
 Jullie eerste taak is om met deze LEGO een robot te bouwen die kan rijden, een geluidssensor heeft en een lichtsensor heeft. 
 Uiteraard is de geluidssensor bedoeld om jullie stem te horen, plaats deze dus bovenop. 
 De lichtsensor gaat gebruikt worden om een lijn te volgen, plaats deze dus voorop de robot en dicht bij de grond. 
 In de box met LEGO die je ontvangt zal een handleiding zitten die uitlegt hoe je een standaard robot bouwt. 
-Deze robot is zeer geschikt voor de taak, maar nadat je hem gebouwt hebt mag je natuurlijk aanpassingen doen aan het design om hem extra geschikt te maken voor deze taak. 
+Deze robot is zeer geschikt voor de taak, maar nadat je hem gebouwt hebt mag je natuurlijk aanpassingen doen aan het design om hem extra geschikt te maken voor deze taak.  
 
+\begin{figure}[h!]
+	\caption{Een voorbeeld van een NXT robot}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/pirate}
+\end{figure}
 
-\section{Opdracht 2: stemgestuurde doolhof oplosser}
-
-A complete tutorial can be found here:\url{http://bricxcc.sourceforge.net/nbc/nxcdoc/NXC_tutorial.pdf}. 
-
+\section*{Opdracht 2: stemgestuurde doolhof oplosser}
 Het doel van de tweede opdracht is om je robot zo te programmeren dat hij "spraak-gestuurd" een doolhof op kan lossen. 
 Helaas is het met deze NXT computers (ook wel bricks genoemd) erg moeilijk om spraakherkenning te maken. 
 Voor deze opdracht zullen we ons dus beperken tot het horen van geluid om te bepalen of we links, rechts of rechtdoor moeten rijden. 
 
-Op \url{voeg hier nog een URL in} kan je code vinden waarmee je je robot in kan programmeren. 
-Op sommige plekken staat //Hier kan je code invoeren, het is de bedoeling dat je op deze plekken neerzet wat je robot moet doen. 
+Op \url{http://bricxcc.sourceforge.net/nbc/nxcdoc/NXC_tutorial.pdf} kan je code vinden waarmee je je robot in kan programmeren. 
+Uiteraard verwachten we niet dat je al kunt programmeren, daarom hebben we vast een deel van de code opgezet voor jullie. 
+Deze code is te vinden op xxxxxxxxxxxxx.
+Op sommige plekken in de voorbeeldcode staat: //Hier kan je code invoeren, het is de bedoeling dat je op deze plekken neerzet wat je robot moet doen. 
 Omdat we er van uit gaan dat jullie nog niet heel goed kunnen programmeren zijn er een aantal functies gemaakt voor jullie die jullie kunnen gebruiken.
 Deze functies zijn: \\
 gaRechtdoor();\\
 draaiNaarRechts();\\
 draaiNaarLinks();\\
+Zet deze codes neer op plekken waarvan het jullie slim lijkt. 
+Uiteraard mogen jullie de door ons gemaakte code aanpassen!
 
-\section{Opdracht 3: lijnvolger}
-Je kan de tutorial bekijken wanneer je hulp nodig hebt. 
 
+\begin{figure}[h!]
+	\caption{Een robot die bezig is met het oplossen van een doolhof}
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/maze}
+\end{figure}
+\section*{Opdracht 3: lijnvolger}
 Het doel van de derde opdracht is het programmeren van een robot die een lijn kan volgen zonder externe input.
 Deze autonome robot heeft als enige (zinnige) sensor de lichtsensor, omdat een zwarte ondergrond minder licht weerkaatst dan een witte ondergrond moet het volgen van een lijn hiermee mogelijk zijn. 
 Wanneer je robot op de lijn zit hoeft je robot natuurlijk alleen maar rechtdoor te rijden, het wordt echter spannend wanneer de robot er van af is gereden. 
 Zodra je robot van de lijn is gereden is natuurlijk de vraag of de lijn links zit, of dat de lijn toch iets meer naar rechts zit. 
 Probeer ergens in je programma op te slaan hoever je naar links en naar rechts gaat kijken.
+Nogmaals: wanneer je hulp nodig hebt kan je het altijd aan een van de begeleiders vragen!
 
 \end{document}
 
