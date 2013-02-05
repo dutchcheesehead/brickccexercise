@@ -1,0 +1,83 @@
+#define MOTORSNELHEID 40
+#define WACHTTIJDVOORDRAAIEN 40
+#define MOTORKRACHT 40 
+
+inline int krijgHardheidGeluid() 
+{ 
+	return Sensor(IN_3);
+}
+
+
+inline int krijgFelheidLicht() 
+{ 
+	return Sensor(IN_2);
+}
+
+inline void laatVariabelenZien()
+{
+	ClearScreen();
+	TextOut(15,LCD_LINE2,"Geluid:", true);
+	NumOut(60,LCD_LINE2, krijgHardheidGeluid());
+	TextOut(15,LCD_LINE4,"Licht:", true);
+	NumOut(60,LCD_LINE4, krijgFelheidLicht());
+}
+
+sub draaiNaarLinks()
+{
+	OnRev(OUT_C, MOTORKRACHT); 
+	Wait(WACHTTIJDVOORDRAAIEN);
+	OnFwd(OUT_AC, MOTORKRACHT);
+}
+
+sub draaiNaarRechts()
+{
+	OnRev(OUT_C, MOTORKRACHT);
+	Wait(WACHTTIJDVOORDRAAIEN);
+	OnFwd(OUT_AC, MOTORKRACHT);
+}
+
+sub gaRechtdoor(){
+	OnFwd(OUT_AC, MOTORKRACHT);
+	Wait(WACHTTIJDVOORDRAAIEN);
+}
+
+
+
+task main()
+{
+	// Zet de sensoren en drempelwaarden  goed
+	SetSensorSound(IN_3);
+	SetSensorType(IN_1,IN_TYPE_LIGHT_ACTIVE);
+	int lichtDrempelWaarde = 40; //Deze drempelwaarde mag je aanpassen
+	int geluidDrempelWaarde = 40; //Deze drempelwaarde mag je aanpassen
+	bool draaiendNaarRechts = true; //Deze boolean mag je ook tijdens het programma aanpassen
+	draaiendNaarRechts = true; //Dit geeft aan dat je naar rechts aan het draaien bent/dat je net naar rechts draaide
+	draaiendNaarRechts = false; //Dit geeft aan dat je NIET naar rechts aan het draaien bent/dat je net NIET naar rechts draaide
+
+	while(1==1)
+	{ 
+		//Zorg dat we dit de hele tijd herhalen
+		laatVariabelenZien();
+	
+		if (krijgHardheidGeluid() < geluidDrempelWaarde){
+			//Zet hier de code neer voor wanneer je weinig hoort
+		}
+		if (krijgHardheidGeluid() >= geluidDrempelWaarde){
+			//Zet hier de code neer voor wanneer je veel hoort
+		}
+		if (krijgFelheidLicht() < lichtDrempelWaarde){
+			// Zet hier de code neer voor wanneer je weinig licht ziet.
+
+		}
+		if (krijgFelheidLicht() >= lichtDrempelWaarde){
+			// Zet hier de code neer voor wanneer je veel licht ziet
+		}
+
+	}
+}
+
+
+
+
+
+

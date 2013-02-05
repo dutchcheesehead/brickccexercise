@@ -1,0 +1,8 @@
+*makefile*
+*.aux*
+*.blg*
+*.log*
+*.out*
+
+
+
